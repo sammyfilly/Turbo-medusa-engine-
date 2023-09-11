@@ -1,0 +1,97 @@
+{{>header}}
+
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { UseQueryOptionsWrapper, UseMutationOptionsWrapper, queryKeysFactory } from '../core/HookUtils';
+import { use{{{pascalCase clientName}}} } from '../use{{pascalCase clientName}}';
+{{#if imports}}
+	{{#each imports}}
+    {{#if @root.packageNames.models}}
+import type { {{{this}}} } from '{{{@root.packageNames.models}}}';
+    {{else}}
+import type { {{{this}}} } from '../models/{{{this}}}';
+      {{/if}}
+	{{/each}}
+{{/if}}
+
+const QUERY_KEY = '{{{camelCase name}}}';
+export const {{{queryKeysExportName}}} = queryKeysFactory(QUERY_KEY);
+
+{{#each operations}}
+  {{#equals method 'GET'}}
+    export const {{{hookName}}} = (
+      {{~#if parameters}}{{~>parameters~}},{{/if}}
+      options: UseQueryOptionsWrapper<Awaited<{{>result}}>, Error> = {}
+    ) => {
+      const { client } = use{{{pascalCase ../clientName}}}()
+      const { data, ...rest } = useQuery<Awaited<{{>result}}>, Error>(
+        [QUERY_KEY, '{{ camelCase name }}'{{#if parameters}}, {{>parametersUntyped}}{{/if}}],
+        () => client.{{camelCase service}}.{{name}}({{#if parameters}}{{>parametersUntyped}}{{/if}}),
+        options
+      );
+      return { ...data, ...rest } as const
+    };
+  {{else}}
+    export const {{{hookName}}} = (
+      {{~#if parameters}}{{~>parameters onlyPathFirst=true skipBody=true~}}{{#or parametersPath parametersQuery}},{{/or}}{{/if}}
+      options: UseMutationOptionsWrapper<Awaited<{{>result}}>, Error,
+      {{~#gte parametersPath 2~}}
+        {
+          {{~#each parametersPath}}
+            {{~#unless @first~}}
+              {{{prop}}}{{>isRequired}}: {{>type}}{{#if default}} = {{{default}}}{{/if}}{{#unless @last}}, {{/unless}}
+            {{~/unless~}}
+          {{~/each~}}
+        }
+        {{~#if parametersBody}} &{{/if~}}
+      {{~/gte~}}
+      {{~#if parametersBody}} {{parametersBody.type}}{{else}}{{#unless (gte parametersPath 2)}} void{{/unless}} {{/if~}}
+      > = {}
+    ) => {
+      const { client } = use{{{pascalCase ../clientName}}}()
+      if (!options.onSuccess) {
+        const queryClient = useQueryClient()
+        options.onSuccess = async () => {
+          await queryClient.invalidateQueries([QUERY_KEY])
+        }
+      }
+      return useMutation<Awaited<{{>result}}>, Error,
+        {{~#gte parametersPath 2~}}
+          {
+            {{~#each parametersPath}}
+              {{~#unless @first~}}
+                {{{prop}}}{{>isRequired}}: {{>type}}{{#if default}} = {{{default}}}{{/if}}{{#unless @last}}, {{/unless}}
+              {{~/unless~}}
+            {{~/each~}}
+          }
+          {{~#if parametersBody}} &{{/if~}}
+        {{~/gte~}}
+        {{~#if parametersBody}} {{parametersBody.type}}{{else}}{{#unless (gte parametersPath 2)}} void{{/unless}} {{/if~}}
+      >(
+        [QUERY_KEY, '{{ camelCase name }}'{{#if parameters}}, {{>parametersUntyped onlyPathFirst=true skipBody=true}}{{/if}}],
+        (
+          {{~#gte parametersPath 2~}}
+            {
+              {{~#each parametersPath}}
+                {{~#unless @first~}}
+                  {{{prop}}}: {{{name}}},
+                {{~/unless~}}
+              {{~/each~}}
+              {{~#if parametersBody}}...{{parametersBody.name}}  {{/if~}}
+            }: {
+              {{~#each parametersPath}}
+                {{~#unless @first~}}
+                  {{{prop}}}{{>isRequired}}: {{>type}}{{#if default}} = {{{default}}}{{/if}}{{#unless @last}},
+                  {{/unless}}
+                {{~/unless~}}
+              {{~/each~}}
+            } {{~#if parametersBody}} & {{parametersBody.type}}{{/if~}}
+          {{~else~}}
+            {{~#if parametersBody}}{{parametersBody.name}}: {{parametersBody.type}}{{/if~}}
+          {{~/gte~}}
+        ) => client.{{camelCase service}}.{{name}}({{#if parameters}}{{>parametersUntyped}}{{/if}}),
+        options
+      );
+    };
+  {{/equals}}
+
+{{/each}}
