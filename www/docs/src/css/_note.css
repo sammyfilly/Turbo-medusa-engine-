@@ -1,0 +1,23 @@
+.alert {
+  padding: 16px;
+  border: 1px solid var(--ifm-note-border-color) !important;
+  background-color: var(--ifm-note-background);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.alert p > code {
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 14px !important;
+}
+
+.alert a {
+  text-decoration: none;
+}
+
+[class*=alert--] {
+  --ifm-code-background: var(--medusa-bg-base) !important;
+  --ifm-alert-background-color-highlight: var(--ifm-background-surface-color) !important;
+  --ifm-link-color: var(--medusa-text-interactive) !important;
+}

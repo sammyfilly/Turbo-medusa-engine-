@@ -1,0 +1,296 @@
+/** General sidebar styles **/
+.theme-doc-sidebar-container {
+  z-index: calc(var(--ifm-z-index-overlay) - 1);
+}
+
+.main-sidebar {
+  margin-top: calc(var(--ifm-base-margin-vertical) / 2);
+  padding-left: var(--doc-sidebar-padding) !important;
+  padding-right: var(--doc-sidebar-padding) !important;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list {
+  padding-left: 0 !important;
+}
+
+.menu__list:not(.theme-doc-sidebar-menu) {
+  margin-bottom: 8px;
+}
+
+.menu__list-item:not(:first-child):not(.sidebar-title) {
+  margin-top: 0 !important;
+}
+
+.menu__list,
+.menu__list:not(.theme-doc-sidebar-menu) .menu__link {
+  position: relative;
+}
+
+.menu__list:not(.theme-doc-sidebar-menu) {
+  padding-left: 0 !important;
+}
+
+.menu__list-item:not(.homepage-sidebar-item) .menu__list:not(.theme-doc-sidebar-menu)::before,
+.menu__list-item:not(.homepage-sidebar-item) .menu__list:not(.theme-doc-sidebar-menu) .theme-doc-sidebar-item-category .menu__list-item-collapsible .menu__link--active::before,
+.menu__list-item:not(.homepage-sidebar-item) .menu__list:not(.theme-doc-sidebar-menu) > .theme-doc-sidebar-item-link > .menu__link--active::before {
+  content: '';
+  height: 100%;
+  width: 1px;
+  position: absolute;
+  left: 8px;
+  top: 0;
+  z-index: 1;
+}
+
+.menu__list:not(.theme-doc-sidebar-menu)::before {
+  background-color: var(--medusa-border-base);
+}
+
+.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible .menu__link--active::before,
+.menu__list:not(.theme-doc-sidebar-menu) > .theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-2 > .menu__link--active::before {
+  background-color: var(--medusa-icon-interactive);
+}
+
+.menu__list-item-collapsible .menu__caret {
+  display: none;
+}
+
+.menu__link--sublist-caret:after {
+  content: none;
+}
+
+.sidebar-desktop:not(.scrolling) nav::-webkit-scrollbar {
+  --ifm-scrollbar-size: 0px;
+}
+
+/** Mobile Sidebar **/
+.navbar-sidebar__back {
+  background: transparent;
+  width: fit-content;
+  top: unset;
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: calc(var(--ifm-base-margin-vertical) / 2);
+  font-size: var(--ifm-font-size-base);
+  line-height: var(--ifm-line-height-base);
+}
+
+/** Homepage Sidebar Design **/
+.homepage-sidebar-item:is([class*="level-1"]):is([class*="theme-doc-sidebar-item"]) > .menu__link,
+.homepage-sidebar-item:is([class*="level-1"]):is([class*="theme-doc-sidebar-item"]) > .menu__list-item-collapsible > .menu__link {
+  padding-left: 8px !important;
+}
+
+/** General Sidebar items styles **/
+.menu__list-item-collapsible {
+  border-radius: var(--ifm-global-radius) !important;
+}
+
+.menu__link {
+  font-size: 13px;
+  line-height: var(--medusa-body-regular-line-height);
+  cursor: pointer;
+  border-radius: var(--ifm-global-radius) !important;
+}
+
+.theme-doc-sidebar-item-link {
+  display: flex;
+  align-items: center;
+}
+
+.menu__list-item-collapsible--active {
+  background-color: transparent !important;
+}
+
+[class*="level-2"]:is([class*="theme-doc-sidebar-item"]) .menu__link,
+[class*="level-2"]:is([class*="theme-doc-sidebar-item"]).sidebar-group-divider,
+[class*="level-3"]:is([class*="theme-doc-sidebar-item"]) .menu__link,
+[class*="level-3"]:is([class*="theme-doc-sidebar-item"]).sidebar-group-divider,
+[class*="level-4"]:is([class*="theme-doc-sidebar-item"]) .menu__link,
+[class*="level-4"]:is([class*="theme-doc-sidebar-item"]).sidebar-group-divider {
+  padding-top: var(--ifm-menu-link-padding-vertical);
+  padding-bottom: var(--ifm-menu-link-padding-vertical);
+}
+
+[class*="level-2"]:is([class*="theme-doc-sidebar-item"]) .menu__link,
+[class*="level-2"]:is([class*="theme-doc-sidebar-item"]).sidebar-group-divider {
+  padding-left: calc(var(--ifm-menu-link-padding-horizontal) * 2);
+}
+
+[class*="level-3"]:is([class*="theme-doc-sidebar-item"]) .menu__link,
+[class*="level-3"]:is([class*="theme-doc-sidebar-item"]).sidebar-group-divider {
+  padding-left: calc(var(--ifm-menu-link-padding-horizontal) * 3);
+}
+
+[class*="level-4"]:is([class*="theme-doc-sidebar-item"]) .menu__link,
+[class*="level-4"]:is([class*="theme-doc-sidebar-item"]).sidebar-group-divider {
+  padding-left: calc(var(--ifm-menu-link-padding-horizontal) * 4);
+}
+
+/** Sidebar title **/
+.sidebar-title {
+  margin: calc(var(--ifm-base-margin-vertical) / 2) 0 !important;
+  font-size: var(--medusa-body-regular-size);
+  line-height: var(--medusa-body-regular-line-height);
+  color: var(--medusa-text-primary);
+}
+
+.sidebar-title .menu__link {
+  --ifm-menu-link-padding-horizontal: 0;
+}
+
+.sidebar-title .menu__link--active,
+.sidebar-title .menu__link:hover {
+  background-color: transparent !important;
+}
+
+/** Group Headline **/
+.sidebar-group-headline {
+  margin-top: calc(var(--ifm-base-margin-vertical) / 2);
+  padding: 6px 0;
+}
+
+.theme-doc-sidebar-item-category-level-1.sidebar-group-headline {
+  margin-bottom: 16px;
+}
+
+.sidebar-group-headline:not(.theme-doc-sidebar-item-category-level-1) {
+  margin-bottom: 6px;
+}
+
+.sidebar-group-headline > .menu__list-item-collapsible > .menu__link {
+  color: var(--medusa-text-primary);
+  padding: 0 !important;
+  cursor: default;
+}
+
+.sidebar-group-headline > .menu__list-item-collapsible > .menu__link:hover,
+.sidebar-group-headline .menu__list-item-collapsible:hover {
+  background-color: transparent !important;
+}
+
+/** Divider Line Item **/
+.sidebar-divider-line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--medusa-border-base);
+  margin: calc(var(--ifm-base-margin-vertical) / 2) 0;
+}
+
+/** Sidebar Group Divider **/
+.sidebar-group-divider {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--medusa-text-placeholder);
+}
+
+/** Sidebar Item Icon **/
+
+[class*="theme-doc-sidebar-item-"]:not(.sidebar-title) .sidebar-item-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: calc(var(--ifm-base-margin-vertical) / 2);
+}
+
+.sidebar-title .sidebar-item-icon {
+  background-color: var(--medusa-bg-component);
+  height: 24px;
+  width: 24px;
+  padding: 2px;
+  border-radius: var(--ifm-global-radius);
+}
+
+.sidebar-title-icon-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  border: 1px solid var(--medusa-border-strong);
+  border-radius: var(--ifm-global-radius);
+  margin-right: 16px;
+}
+
+/** Back Link **/
+.sidebar-back-link .menu__link {
+  padding: 0 !important;
+}
+
+.sidebar-back-link .menu__link:hover {
+  background-color: transparent !important;
+}
+
+.menu__list-item-collapsible .menu__link--sublist:hover {
+  background-color: var(--ifm-menu-color-background-hover) !important;
+}
+
+/** Redocly sidebar **/
+.redocusaurus .menu-content label {
+  font-weight: 500 !important;
+  font-size: 12px;
+  line-height: 1.7em;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.redocusaurus .menu-content label.-depth1 {
+  padding-left: 24px;
+}
+
+.redocusaurus .menu-content label {
+  color: var(--ifm-menu-color)
+}
+
+.redocusaurus .menu-content label:hover,
+.redocusaurus .menu-content label.active {
+  background-color: transparent !important;
+  color: var(--ifm-menu-active);
+}
+
+.redocusaurus .menu-content label.active {
+  font-weight: 600 !important;
+}
+
+.redocusaurus .menu-content label svg {
+  display: none;
+}
+
+.redocusaurus .menu-content label[type=tag].-depth1::before {
+  content: "";
+  height: 16px;
+  width: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 6.8px;
+  transition: transform var(--ifm-transition-fast) linear;
+  position: absolute;
+}
+
+html:not([data-theme="dark"]) .redocusaurus .menu-content label[type=tag].-depth1::before {
+  background-image: url('/img/triangle-right.png');
+}
+
+[data-theme="dark"] .redocusaurus .menu-content label[type=tag].-depth1::before {
+  background-image: url('/img/triangle-right-dark.png');
+}
+
+html:not([data-theme="dark"]) .redocusaurus .menu-content label[type=tag].-depth1:hover::before,
+html:not([data-theme="dark"]) .redocusaurus .menu-content label[type=tag].-depth1.active::before {
+  background-image: url('/img/triangle-right-hover.png');
+}
+
+[data-theme="dark"] .redocusaurus .menu-content label[type=tag].-depth1:hover::before,
+[data-theme="dark"] .redocusaurus .menu-content label[type=tag].-depth1.active::before {
+  background-image: url('/img/triangle-right-dark-hover.png');
+}
+
+.redocusaurus .menu-content label[type=tag].-depth1::before {
+  left: 0;
+}
+
+.redocusaurus .menu-content label::before {
+  top: 35%;
+}
