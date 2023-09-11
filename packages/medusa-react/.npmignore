@@ -1,0 +1,14 @@
+/lib
+node_modules
+.DS_store
+.env*
+/*.js
+!index.js
+test/
+public/
+.storybook/
+mocks/
+stories/
+yarn.lock.yarn
+__mocks__
+.turbo
