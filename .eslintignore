@@ -1,0 +1,27 @@
+/docs
+/docs-util
+/www
+typedoc.*
+jest*
+
+packages/*
+# List of packages to Lint
+!packages/medusa
+!packages/admin-ui
+!packages/admin
+!packages/medusa-payment-stripe
+!packages/event-bus-redis
+!packages/event-bus-local
+!packages/medusa-plugin-meilisearch
+!packages/medusa-plugin-algolia
+
+
+
+**/models/*
+**/scripts/*
+**/dist/*
+**/node_modules/*
+**/migrations/*
+**/__mocks__/*
+
+.eslintrc.js
