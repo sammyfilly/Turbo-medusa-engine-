@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/admin/batch POST /admin/batch/:id/cancel Cancels batch job created by the user 1`] = `
+Object {
+  "awaiting_confirmation_at": null,
+  "canceled_at": Any<String>,
+  "confirmed_at": null,
+  "context": Object {},
+  "created_at": Any<String>,
+  "created_by": "admin_user",
+  "deleted_at": null,
+  "id": "job_1",
+  "processing_at": null,
+  "result": null,
+  "status": "canceled",
+  "type": "batch_1",
+  "updated_at": Any<String>,
+}
+`;
