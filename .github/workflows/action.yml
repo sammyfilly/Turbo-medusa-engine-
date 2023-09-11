@@ -1,0 +1,202 @@
+name: Medusa Pipeline
+on:
+  pull_request:
+    paths-ignore:
+      - "docs/**"
+      - "www/**"
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout
+        uses: actions/checkout@v2.3.5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: "14"
+          cache: "yarn"
+
+      - name: Assert changed
+        run: ./scripts/assert-changed-files-actions.sh "packages"
+
+      - name: Install dependencies
+        uses: ./.github/actions/cache-bootstrap
+        with:
+          extension: unit-tests
+
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test
+
+  integration-tests-api:
+    runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+    services:
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    strategy:
+      matrix:
+        chunk: [0, 1, 2, 3]
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout
+        uses: actions/checkout@v2.3.5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: "14"
+          cache: "yarn"
+
+      - name: Bootstrap packages
+        uses: ./.github/actions/cache-bootstrap
+        with:
+          extension: integration-tests
+
+      - name: Build Packages
+        run: yarn run build
+
+      - name: Install dev cli
+        run: sudo npm i -g medusa-dev-cli
+
+      - name: Set path to medusa repo
+        run: medusa-dev --set-path-to-repo `pwd`
+
+      - name: use old yarn version
+        run: yarn set version 1.19.0
+
+      - name: Force install API
+        run: medusa-dev --force-install
+        working-directory: integration-tests/api
+
+      - name: Build integration tests
+        run: yarn build
+        working-directory: integration-tests/api
+
+      - name: Set Chunks
+        id: set-test-chunks
+        run: echo "::set-output name=test-chunks::$(npx jest --listTests --json | jq -cM '[_nwise(length / 4 | ceil)]')"
+        working-directory: integration-tests/api
+
+      - name: Set Chunk IDs
+        run: echo "::set-output name=test-chunk-ids::$(echo $CHUNKS | jq -cM 'to_entries | map(.key)')"
+        env:
+          CHUNKS: ${{ steps['set-test-chunks'].outputs['test-chunks'] }}
+
+      - name: Run integration tests
+        run: echo $CHUNKS | jq '.[${{ matrix.chunk }}] | .[] | @text' | xargs yarn test --maxWorkers=50%
+        working-directory: integration-tests/api
+        env:
+          DB_PASSWORD: postgres
+          CHUNKS: ${{ steps['set-test-chunks'].outputs['test-chunks'] }}
+
+  integration-tests-plugins:
+    runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout
+        uses: actions/checkout@v2.3.5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: "14"
+          cache: "yarn"
+
+      - name: Bootstrap packages
+        uses: ./.github/actions/cache-bootstrap
+        with:
+          extension: integration-tests
+
+      - name: Build Packages
+        run: yarn run build
+
+      - name: Install dev cli
+        run: sudo npm i -g medusa-dev-cli
+
+      - name: Set path to medusa repo
+        run: medusa-dev --set-path-to-repo `pwd`
+
+      - name: use old yarn version
+        run: yarn set version 1.19.0
+
+      - name: Force install
+        run: medusa-dev --force-install
+        working-directory: integration-tests/plugins
+
+      - name: Build plugin integration tests
+        run: yarn build
+        working-directory: integration-tests/plugins
+
+      - name: Run plugin integration tests
+        run: yarn test:integration:plugins --maxWorkers=50% --silent=false
+        env:
+          DB_PASSWORD: postgres
