@@ -1,0 +1,62 @@
+{
+  "name": "@medusajs/admin-sdk",
+  "version": "0.0.1",
+  "homepage": "https://medusajs.com",
+  "bugs": {
+    "url": "https://github.com/medusajs/medusa/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medusajs/medusa.git",
+    "directory": "packages/medusa-admin-sdk"
+  },
+  "bin": {
+    "medusa-admin": "cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./cli": {
+      "import": "./dist/esm/cli/index.js",
+      "require": "./dist/cjs/cli/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "files": [
+    "dist",
+    "!**/*.d.ts.map"
+  ],
+  "scripts": {
+    "build": "concurrently \"npm run build:esm\" \"npm run build:cjs\"",
+    "build:esm": "tsc --project ./tsconfig.json --module ES2015 --outDir ./dist/esm",
+    "build:cjs": "tsc --project ./tsconfig.json --module CommonJS --outDir ./dist/cjs"
+  },
+  "devDependencies": {
+    "@types/inquirer": "8.2.5",
+    "@types/prompts": "^2.4.2",
+    "concurrently": "^7.6.0",
+    "medusa-core-utils": "*",
+    "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "medusa-core-utils": "*"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^2.2.0",
+    "commander": "^9.4.1",
+    "picocolors": "^1.0.0",
+    "pretty-error": "^4.0.0",
+    "prompts": "^2.4.2",
+    "vite": "^3.2.5"
+  }
+}
