@@ -3700,12 +3700,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/is-prop-valid@npm:^0.8.2, @emotion/is-prop-valid@npm:^0.8.8":
+"@emotion/is-prop-valid@npm:^0.8.2":
   version: 0.8.8
   resolution: "@emotion/is-prop-valid@npm:0.8.8"
   dependencies:
     "@emotion/memoize": 0.7.4
   checksum: f6be625f067c7fa56a12a4edaf090715616dc4fc7803c87212831f38c969350107b9709b1be54100e53153b18d9fa068eb4bf4f9ac66a37a8edf1bac9b64e279
+  languageName: node
+  linkType: hard
+
+"@emotion/is-prop-valid@npm:^1.1.0":
+  version: 1.2.1
+  resolution: "@emotion/is-prop-valid@npm:1.2.1"
+  dependencies:
+    "@emotion/memoize": ^0.8.1
+  checksum: 7c2aabdf0ca9986ca25abc9dae711348308cf18d418d64ffa4c8ffd2114806c47f2e06ba8ee769f38ec67d65bd59ec73f34d94023e81baa1c43510ac86ccd5e6
   languageName: node
   linkType: hard
 
@@ -6403,7 +6412,7 @@ __metadata:
     "@medusajs/utils": "workspace:^"
     "@readme/json-schema-ref-parser": ^1.2.0
     "@readme/openapi-parser": ^2.4.0
-    "@redocly/cli": 1.0.0-beta.123
+    "@redocly/cli": 1.0.2
     "@types/lodash": ^4.14.191
     commander: ^10.0.0
     execa: 1.0.0
@@ -9164,35 +9173,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redocly/cli@npm:1.0.0-beta.123":
-  version: 1.0.0-beta.123
-  resolution: "@redocly/cli@npm:1.0.0-beta.123"
+"@redocly/cli@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@redocly/cli@npm:1.0.2"
   dependencies:
-    "@redocly/openapi-core": 1.0.0-beta.123
+    "@redocly/openapi-core": 1.0.2
     assert-node-version: ^1.0.3
     chokidar: ^3.5.1
     colorette: ^1.2.0
     glob: ^7.1.6
     glob-promise: ^3.4.0
     handlebars: ^4.7.6
-    mobx: ^6.3.2
+    mobx: ^6.0.4
     portfinder: ^1.0.26
-    react: ^17.0.1
-    react-dom: ^17.0.1
+    react: ^17.0.0
+    react-dom: ^17.0.0
     redoc: ~2.0.0
+    semver: ^7.5.2
     simple-websocket: ^9.0.0
-    styled-components: 5.3.3
+    styled-components: ^5.1.1
     yargs: 17.0.1
   bin:
     openapi: bin/cli.js
     redocly: bin/cli.js
-  checksum: dfc2e86894c48acecc3f40f4fd114d21863eb58a7ed7796cdc95926fa47b0d11067ba08838d6b9459f47056b06c9b25ea5c7cfb940e2878336901726528f0f2c
+  checksum: eac40aea2fdb435771bf06e6b43c018b147497d4438ee1a58df701b57ccdb1fe90840a64c9565ed9c8ccfba725cbd2f3f9702d0da4aa6fa783c2bb2d55aa7601
   languageName: node
   linkType: hard
 
-"@redocly/openapi-core@npm:1.0.0-beta.123":
-  version: 1.0.0-beta.123
-  resolution: "@redocly/openapi-core@npm:1.0.0-beta.123"
+"@redocly/openapi-core@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@redocly/openapi-core@npm:1.0.2"
   dependencies:
     "@redocly/ajv": ^8.11.0
     "@types/node": ^14.11.8
@@ -9204,7 +9214,7 @@ __metadata:
     node-fetch: ^2.6.1
     pluralize: ^8.0.0
     yaml-ast-parser: 0.0.43
-  checksum: c19938ea966e96da688a3a5ab61d84d761c82c5c29e6a56513fdc07b393d8159fe925c1835ed0504ad5c460bf067179d5ba4fff9a2990d3f856fc95fe615c2e9
+  checksum: fbbcf14dec95fff04ef5da8b0e0912842a3ce7b94678e365b3708cba5fd3173f0c6e9e531cef85245edc2bc02e6f7b3626e2651a22093349a2f140ad1a71849a
   languageName: node
   linkType: hard
 
@@ -32604,10 +32614,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx@npm:^6.3.2":
-  version: 6.9.0
-  resolution: "mobx@npm:6.9.0"
-  checksum: 8bda5ab2e17a105b991db823ebcb1df986fbeeb0920c1fccde8f73354b915a93f67eba98ca801f0338b5556bbf2322925c91de623a27b603b4011f7103c86f64
+"mobx@npm:^6.0.4":
+  version: 6.10.2
+  resolution: "mobx@npm:6.10.2"
+  checksum: c874e3531047dcd1c0ffa7c118ecab2e1abebd924e3cf361bcfce4304e75529d8c0143b8b72e35e4592eed417b3186b755e56f4e03983461ba1816c1d47499e3
   languageName: node
   linkType: hard
 
@@ -39006,7 +39016,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.5.4":
+"semver@npm:^7.5.2, semver@npm:^7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -40645,13 +40655,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:5.3.3":
-  version: 5.3.3
-  resolution: "styled-components@npm:5.3.3"
+"styled-components@npm:^5.1.1":
+  version: 5.3.11
+  resolution: "styled-components@npm:5.3.11"
   dependencies:
     "@babel/helper-module-imports": ^7.0.0
     "@babel/traverse": ^7.4.5
-    "@emotion/is-prop-valid": ^0.8.8
+    "@emotion/is-prop-valid": ^1.1.0
     "@emotion/stylis": ^0.8.4
     "@emotion/unitless": ^0.7.4
     babel-plugin-styled-components: ">= 1.12.0"
@@ -40663,7 +40673,7 @@ __metadata:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
     react-is: ">= 16.8.0"
-  checksum: 0fda77406c668a16c753f0778850a90d5fbeae419791dac533e3f67e77f8c767d89022626aafa169fffe8b0873e15bf71126b2bab945dc98af6079d8b90e7488
+  checksum: 90b73479770c5d68e22e6366d210119d7203154a3e49dc828f6f6b4c2d5c077f7548210dfddd0af3cb15b0b63fab3eec8dc995c1734e97a313a9b83ba893668e
   languageName: node
   linkType: hard
 
