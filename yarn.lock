@@ -37306,8 +37306,8 @@ __metadata:
   linkType: hard
 
 "react-select@npm:^5.5.4":
-  version: 5.7.3
-  resolution: "react-select@npm:5.7.3"
+  version: 5.7.5
+  resolution: "react-select@npm:5.7.5"
   dependencies:
     "@babel/runtime": ^7.12.0
     "@emotion/cache": ^11.4.0
@@ -37321,7 +37321,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: a8000c55812651b2f16eebb9fc04ee3c4500a2e4984fc79964243a42132ade7ad1edb6421b908b4ead87ff1ae01cbc20be5f96eae934938e93b46bbdfee3c353
+  checksum: 932bd52897963837876fde81eacbe4a2f61982e007aff36144573e9b121bba8a3c26de05095cb6df43d5b246070849e7783811dc059b80a12d38cccdf63a19b9
   languageName: node
   linkType: hard
 
