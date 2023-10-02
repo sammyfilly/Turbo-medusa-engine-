@@ -1,5 +1,4 @@
 name: OAS Comments Format Validation
-on:
   pull_request:
 
 jobs:
@@ -17,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
