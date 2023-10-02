@@ -269,25 +269,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docsearch/css@npm:3.5.1":
-  version: 3.5.1
-  resolution: "@docsearch/css@npm:3.5.1"
-  checksum: 532374e8edf3cf2f571dd9c99737d81b656d16f2e7bff1a1b0a35d35f5c7275627d5350d61af52c3d6ad2911a4fc8dba6df0476c63e174ea2e4466ab15440093
+"@docsearch/css@npm:3.5.2":
+  version: 3.5.2
+  resolution: "@docsearch/css@npm:3.5.2"
+  checksum: 736e029b65dba3b2fafb98b4bc4e6f7f411863fed4ef2798c82be8dcdcbdcb9dea6a75376b19d013e9d2f8607b2e3f8d8353938343b08b382894d8b16883ccb3
   languageName: node
   linkType: hard
 
 "@docsearch/react@npm:^3.5.1":
-  version: 3.5.1
-  resolution: "@docsearch/react@npm:3.5.1"
+  version: 3.5.2
+  resolution: "@docsearch/react@npm:3.5.2"
   dependencies:
     "@algolia/autocomplete-core": 1.9.3
     "@algolia/autocomplete-preset-algolia": 1.9.3
-    "@docsearch/css": 3.5.1
-    algoliasearch: ^4.0.0
+    "@docsearch/css": 3.5.2
+    algoliasearch: ^4.19.1
   peerDependencies:
     "@types/react": ">= 16.8.0 < 19.0.0"
     react: ">= 16.8.0 < 19.0.0"
     react-dom: ">= 16.8.0 < 19.0.0"
+    search-insights: ">= 1 < 3"
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -295,7 +296,9 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 506c6d4f22f1e24d99e0ec368993a9c20479b79ca5fd42f803338722ab2e1536256bf8a22cf1c1fd0af3c9925b8f5d01a87913af6d47e22bf46bec408f09c9ee
+    search-insights:
+      optional: true
+  checksum: 1dc22a4364be89bc4139bbcc4c90ea240a701961eb698101f53067fd6e0ca014fc12bb6577b67dc108e0ef5e8484866df8e08eb681f9bcafc898a822ce2f42d8
   languageName: node
   linkType: hard
 
@@ -2471,7 +2474,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"algoliasearch@npm:^4.0.0, algoliasearch@npm:^4.19.1":
+"algoliasearch@npm:^4.19.1":
   version: 4.19.1
   resolution: "algoliasearch@npm:4.19.1"
   dependencies:
