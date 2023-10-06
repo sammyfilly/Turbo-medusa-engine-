@@ -5507,11 +5507,11 @@ __metadata:
   linkType: hard
 
 "docusaurus-plugin-image-zoom@npm:^0.1.1":
-  version: 0.1.2
-  resolution: "docusaurus-plugin-image-zoom@npm:0.1.2"
+  version: 0.1.4
+  resolution: "docusaurus-plugin-image-zoom@npm:0.1.4"
   dependencies:
     medium-zoom: ^1.0.6
-  checksum: 510016ec5b3fdb4d79b34b27d35bd505b3bfe943e960e55e547ff7b04775d6edecf7429cf35424c4f79fac00b675eba0b41e436c957842dd0fdcfa70234896ad
+  checksum: ffe40bca157f440bde0d4831350a22dad5d8febfc62363f55466392ee0a161795edfb49c5a49931488ac09ee3f3b18c8eb0f9927393f65bc2eacb740513ff2b1
   languageName: node
   linkType: hard
 
