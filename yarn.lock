@@ -6543,7 +6543,7 @@ __metadata:
     "@babel/core": 7.14.3
     "@babel/preset-env": 7.11.5
     "@babel/preset-typescript": 7.18.6
-    "@rollup/plugin-commonjs": 24.0.0
+    "@rollup/plugin-commonjs": 24.1.0
     "@rollup/plugin-node-resolve": 15.0.1
     "@rollup/plugin-typescript": 9.0.2
     "@types/fs-extra": ^9.0.12
@@ -9282,25 +9282,6 @@ __metadata:
     "@types/babel__core":
       optional: true
   checksum: 2766134dd5567c0d4fd6909d1f511ce9bf3bd9d727e1bc5ffdd6097a3606faca324107ae8e0961839ee4dbb45e5e579ae601efe472fc0a271259aea79920cafa
-  languageName: node
-  linkType: hard
-
-"@rollup/plugin-commonjs@npm:24.0.0":
-  version: 24.0.0
-  resolution: "@rollup/plugin-commonjs@npm:24.0.0"
-  dependencies:
-    "@rollup/pluginutils": ^5.0.1
-    commondir: ^1.0.1
-    estree-walker: ^2.0.2
-    glob: ^8.0.3
-    is-reference: 1.2.1
-    magic-string: ^0.27.0
-  peerDependencies:
-    rollup: ^2.68.0||^3.0.0
-  peerDependenciesMeta:
-    rollup:
-      optional: true
-  checksum: ae2ed1d49722fad55f7ef7629baad5fb31bc389e6042912fb5cb9623c2c9c0def27c66bbd1aea72f1fcd65caa1410a9de80a0377f85d8cd8068f97c0adeaf3da
   languageName: node
   linkType: hard
 
