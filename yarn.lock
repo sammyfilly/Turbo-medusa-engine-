@@ -6517,7 +6517,7 @@ __metadata:
     awilix: ^8.0.0
     cross-env: ^5.2.1
     jest: ^29.6.3
-    knex: 2.4.2
+    knex: 2.5.1
     pg: ^8.11.2
     resolve-cwd: ^3.0.0
     rimraf: ^5.0.1
@@ -6603,7 +6603,7 @@ __metadata:
     cross-env: ^5.2.1
     dotenv: ^16.1.4
     jest: ^29.6.3
-    knex: 2.4.2
+    knex: 2.5.1
     medusa-test-utils: ^1.1.40
     rimraf: ^3.0.2
     ts-jest: ^29.1.1
@@ -6633,7 +6633,7 @@ __metadata:
     dotenv: ^16.1.4
     faker: ^6.6.6
     jest: ^29.6.3
-    knex: 2.4.2
+    knex: 2.5.1
     lodash: ^4.17.21
     medusa-test-utils: ^1.1.40
     pg-god: ^1.0.12
@@ -6742,7 +6742,7 @@ __metadata:
     cross-env: ^5.2.1
     express: ^4.18.2
     jest: ^29.6.3
-    knex: 2.4.2
+    knex: 2.5.1
     rimraf: ^5.0.1
     ts-jest: ^29.1.1
     typescript: ^5.1.6
@@ -29931,6 +29931,45 @@ __metadata:
   languageName: node
   linkType: hard
 
+"knex@npm:2.5.1":
+  version: 2.5.1
+  resolution: "knex@npm:2.5.1"
+  dependencies:
+    colorette: 2.0.19
+    commander: ^10.0.0
+    debug: 4.3.4
+    escalade: ^3.1.1
+    esm: ^3.2.25
+    get-package-type: ^0.1.0
+    getopts: 2.3.0
+    interpret: ^2.2.0
+    lodash: ^4.17.21
+    pg-connection-string: 2.6.1
+    rechoir: ^0.8.0
+    resolve-from: ^5.0.0
+    tarn: ^3.0.2
+    tildify: 2.0.0
+  peerDependenciesMeta:
+    better-sqlite3:
+      optional: true
+    mysql:
+      optional: true
+    mysql2:
+      optional: true
+    pg:
+      optional: true
+    pg-native:
+      optional: true
+    sqlite3:
+      optional: true
+    tedious:
+      optional: true
+  bin:
+    knex: bin/cli.js
+  checksum: 33580641feaa93074bdc10e78f06382e5017d46a3cd22821c09057e7da303c35772add39a110fffe685c2f438a78751a0eb6f50aad1c4bdb032e8ec9b7879b69
+  languageName: node
+  linkType: hard
+
 "kuler@npm:^2.0.0":
   version: 2.0.0
   resolution: "kuler@npm:2.0.0"
@@ -34669,7 +34708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-connection-string@npm:^2.5.0":
+"pg-connection-string@npm:2.6.1, pg-connection-string@npm:^2.5.0":
   version: 2.6.1
   resolution: "pg-connection-string@npm:2.6.1"
   checksum: e5a71a2da143b8dc17143a9db7737679b210643771aa678d3bc60c7bc70da11bbb8e2d531be91c8c4eddd6ac6046307811e793f5850b9ba595a11785c948a417
