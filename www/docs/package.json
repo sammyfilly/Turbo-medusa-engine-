@@ -23,7 +23,7 @@
     "@docusaurus/preset-classic": "latest",
     "@docusaurus/remark-plugin-npm2yarn": "latest",
     "@octokit/request": "^6.2.3",
-    "@svgr/webpack": "6.2.1",
+    "@svgr/webpack": "6.5.1",
     "algoliasearch-helper": "^3.11.3",
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.14",
