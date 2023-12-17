@@ -42231,13 +42231,13 @@ __metadata:
   linkType: hard
 
 "typedoc-plugin-markdown@npm:^3.13.4":
-  version: 3.15.3
-  resolution: "typedoc-plugin-markdown@npm:3.15.3"
+  version: 3.17.1
+  resolution: "typedoc-plugin-markdown@npm:3.17.1"
   dependencies:
     handlebars: ^4.7.7
   peerDependencies:
     typedoc: ">=0.24.0"
-  checksum: 573a5c103843b7b0035bedb0bac8ea34f842e8e63ade154d680c58fe6720e6fe7f9a48e3c3062021411d4710a4b06af32a6687d9d50b2c7a0512147dafeac060
+  checksum: 5c9322cd6b5218b1c8b18e6c9df45ad0f99dea9b9cee4006f1f286b04725db47e26856b3e07069beabbd65d8357da34563707d50027b19bb18fd3633a3591349
   languageName: node
   linkType: hard
 
