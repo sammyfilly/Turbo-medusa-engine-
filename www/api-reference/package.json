@@ -28,7 +28,7 @@
     "autoprefixer": "10.4.14",
     "clsx": "^2.0.0",
     "copy-text-to-clipboard": "^3.2.0",
-    "eslint": "8.45.0",
+    "eslint": "8.57.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-next": "latest",
     "jsdom": "^22.1.0",
