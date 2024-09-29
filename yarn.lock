@@ -6442,7 +6442,7 @@ __metadata:
     "@medusajs/workflows": ^0.2.1
     "@types/express": ^4.17.17
     "@types/ioredis": ^4.28.10
-    "@types/jsonwebtoken": ^8.5.9
+    "@types/jsonwebtoken": ^9.0.0
     "@types/lodash": ^4.14.191
     "@types/multer": ^1.4.7
     "@types/papaparse": ^5.3.7
@@ -13587,12 +13587,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsonwebtoken@npm:^8.5.0, @types/jsonwebtoken@npm:^8.5.9":
+"@types/jsonwebtoken@npm:^8.5.0":
   version: 8.5.9
   resolution: "@types/jsonwebtoken@npm:8.5.9"
   dependencies:
     "@types/node": "*"
   checksum: 4374b0f1b5641d1dd8847fa6f50bd34ec215f3244ea045556d2caa74ed559b2571502db73526bb8fbff038a60ff7e6bf56ffa79679c0b03539b55fda32617a23
+  languageName: node
+  linkType: hard
+
+"@types/jsonwebtoken@npm:^9.0.0":
+  version: 9.0.7
+  resolution: "@types/jsonwebtoken@npm:9.0.7"
+  dependencies:
+    "@types/node": "*"
+  checksum: e1cd0e48fcae21b1d4378887a23453bd7212b480a131b11bcda2cdeb0687d03c9646ee5ba592e04cfaf76f7cc80f179950e627cdb3ebc90a5923bce49a35631a
   languageName: node
   linkType: hard
 
