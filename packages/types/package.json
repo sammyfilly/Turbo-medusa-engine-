@@ -19,7 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "awilix": "^8.0.0",
-    "cross-env": "^5.2.1",
+    "cross-env": "^7.0.0",
     "ioredis": "^5.2.5",
     "rimraf": "^5.0.1",
     "typeorm": "^0.3.16",

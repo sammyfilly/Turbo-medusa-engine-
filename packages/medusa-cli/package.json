@@ -28,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/yargs": "^15.0.15",
-    "cross-env": "^5.2.1",
+    "cross-env": "^7.0.0",
     "jest": "^25.5.4",
     "rimraf": "^5.0.1",
     "ts-jest": "^25.5.1",
