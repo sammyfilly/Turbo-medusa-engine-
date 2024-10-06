@@ -15302,19 +15302,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"analytics-node@npm:^3.4.0-beta.1":
-  version: 3.5.0
-  resolution: "analytics-node@npm:3.5.0"
+"analytics-node@npm:^6.0.0":
+  version: 6.2.0
+  resolution: "analytics-node@npm:6.2.0"
   dependencies:
     "@segment/loosely-validate-event": ^2.0.0
-    axios: ^0.21.1
-    axios-retry: ^3.0.2
+    axios: ^0.27.2
+    axios-retry: 3.2.0
     lodash.isstring: ^4.0.1
     md5: ^2.2.1
     ms: ^2.0.0
     remove-trailing-slash: ^0.1.0
-    uuid: ^3.2.1
-  checksum: 041b0ac7d20df2366ebf612f7e088f686241ec57f7f4212252fd896b095210b1464724ababfa3904679e9137ee3ccb64a1ed64c8d69dc222ac1c9d2d6c19e74f
+    uuid: ^8.3.2
+  checksum: f7caf5f7692fee994c7ee5d32eeaad0eb26d97a0975d3d6685e0d14b84b497085d5c16c1f84fc9ad337adb1cce4aaa6b54d422066f19f6279f05be5816893854
   languageName: node
   linkType: hard
 
@@ -16104,7 +16104,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios-retry@npm:^3.0.2, axios-retry@npm:^3.1.9":
+"axios-retry@npm:3.2.0":
+  version: 3.2.0
+  resolution: "axios-retry@npm:3.2.0"
+  dependencies:
+    is-retry-allowed: ^1.1.0
+  checksum: 2d0cde156270739e87577e3a7673fcc139db48447b843cf23b735108ef8323bd78de2695637848182cc014edecb66e7a8ea00fd605dc08a32d5f47c67a64404c
+  languageName: node
+  linkType: hard
+
+"axios-retry@npm:^3.1.9":
   version: 3.5.1
   resolution: "axios-retry@npm:3.5.1"
   dependencies:
@@ -26658,6 +26667,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-retry-allowed@npm:^1.1.0":
+  version: 1.2.0
+  resolution: "is-retry-allowed@npm:1.2.0"
+  checksum: a80f14e1e11c27a58f268f2927b883b635703e23a853cb7b8436e3456bf2ea3efd5082a4e920093eec7bd372c1ce6ea7cea78a9376929c211039d0cc4a393a44
+  languageName: node
+  linkType: hard
+
 "is-retry-allowed@npm:^2.2.0":
   version: 2.2.0
   resolution: "is-retry-allowed@npm:2.2.0"
@@ -31673,7 +31689,7 @@ __metadata:
     "@babel/preset-env": ^7.7.5
     "@babel/register": ^7.7.4
     "@babel/runtime": ^7.9.6
-    analytics-node: ^3.4.0-beta.1
+    analytics-node: ^6.0.0
     axios: ^0.21.0
     body-parser: ^1.19.0
     cross-env: ^5.2.1
@@ -43105,7 +43121,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^3.2.1, uuid@npm:^3.3.2":
+"uuid@npm:^3.3.2":
   version: 3.4.0
   resolution: "uuid@npm:3.4.0"
   bin:
