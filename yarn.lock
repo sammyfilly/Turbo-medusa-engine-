@@ -31887,7 +31887,7 @@ __metadata:
     configstore: 5.0.1
     cross-env: ^5.2.1
     global: ^4.4.0
-    is-docker: ^2.2.1
+    is-docker: ^3.0.0
     jest: ^25.5.4
     nodemon: ^2.0.20
     remove-trailing-slash: ^0.1.1
