@@ -12,7 +12,7 @@
     "@medusajs/cache-inmemory": "workspace:*",
     "@medusajs/event-bus-local": "workspace:*",
     "@medusajs/medusa": "workspace:*",
-    "faker": "^5.5.3",
+    "faker": "^6.0.0",
     "medusa-interfaces": "workspace:*",
     "pg": "^8.11.0",
     "typeorm": "^0.3.16"
