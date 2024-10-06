@@ -16,7 +16,7 @@
   "devDependencies": {
     "@medusajs/medusa": "^1.15.1",
     "@medusajs/types": "workspace:^",
-    "cross-env": "^5.2.1",
+    "cross-env": "^7.0.0",
     "jest": "^25.5.4",
     "rimraf": "^5.0.1",
     "typescript": "^4.9.5"

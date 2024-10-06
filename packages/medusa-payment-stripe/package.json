@@ -24,7 +24,7 @@
     "@medusajs/medusa": "^1.15.1",
     "@types/stripe": "^8.0.417",
     "awilix": "^8.0.1",
-    "cross-env": "^5.2.1",
+    "cross-env": "^7.0.0",
     "jest": "^25.5.4",
     "medusa-react": "^9.0.4",
     "rimraf": "^5.0.1",
