@@ -6454,7 +6454,7 @@ __metadata:
     class-transformer: ^0.5.1
     class-validator: ^0.14.0
     compression: ^1.7.4
-    connect-redis: ^5.0.0
+    connect-redis: ^7.0.0
     cookie-parser: ^1.4.6
     core-js: ^3.6.5
     cors: ^2.8.5
@@ -18717,10 +18717,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"connect-redis@npm:^5.0.0":
-  version: 5.2.0
-  resolution: "connect-redis@npm:5.2.0"
-  checksum: 89352028531d0c7ed86ebbb3af923e0cf41dc098aa556925d7372ec9b9fafb228bfc1085a77888a1c7c2373844c8ac336b2ebb8771cb9b89785770e932ae5888
+"connect-redis@npm:^7.0.0":
+  version: 7.1.1
+  resolution: "connect-redis@npm:7.1.1"
+  peerDependencies:
+    express-session: ">=1"
+  checksum: eeb9e275176d1ef973c808df7c860c80300dfdecdee1a8ca20524fc4e37ccb2206923b07f17501fb7235cde73e9db9e06dff79ef17a54e5a57f35db247ec99fb
   languageName: node
   linkType: hard
 
