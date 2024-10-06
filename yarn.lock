@@ -6181,7 +6181,7 @@ __metadata:
     "@rollup/plugin-virtual": ^3.0.1
     "@types/express": ^4.17.13
     commander: ^10.0.0
-    dotenv: 16.0.3
+    dotenv: 16.4.5
     esbuild: 0.17.18
     express: 4.18.2
     fs-extra: 11.1.0
@@ -6350,7 +6350,7 @@ __metadata:
     configstore: 5.0.1
     core-js: ^3.6.5
     cross-env: ^5.2.1
-    dotenv: 16.0.3
+    dotenv: 16.4.5
     execa: ^5.1.1
     fs-exists-cached: ^1.0.0
     fs-extra: ^10.0.0
@@ -20640,17 +20640,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:16.0.3":
-  version: 16.0.3
-  resolution: "dotenv@npm:16.0.3"
-  checksum: 109457ac5f9e930ca8066ea33887b6f839ab24d647a7a8b49ddcd1f32662e2c35591c5e5b9819063e430148a664d0927f0cbe60cf9575d89bc524f47ff7e78f0
-  languageName: node
-  linkType: hard
-
 "dotenv@npm:16.1.4":
   version: 16.1.4
   resolution: "dotenv@npm:16.1.4"
   checksum: 47cf5ce136bf2a5e8402fc9855d95848973cfee423fe0adf1a7cd565c842c51e5b8c95889b075140c26b092b74dd2a319970ff496cd7159ab3f1fc58edfc0ede
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:16.4.5":
+  version: 16.4.5
+  resolution: "dotenv@npm:16.4.5"
+  checksum: 48d92870076832af0418b13acd6e5a5a3e83bb00df690d9812e94b24aff62b88ade955ac99a05501305b8dc8f1b0ee7638b18493deb6fe93d680e5220936292f
   languageName: node
   linkType: hard
 
